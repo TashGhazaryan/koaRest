@@ -1,0 +1,33 @@
+{
+  "name": "restful",
+  "version": "1.0.0",
+  "description": "rest api",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/aws-lambda": "^8.10.2",
+    "@types/koa-bodyparser": "^4.2.0",
+    "@types/koa-compose": "^3.2.2",
+    "koa": "^2.5.0",
+    "koa-body": "^2.5.0",
+    "koa-bodyparser": "^2.5.0",
+    "koa-compose": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "koa-server-timestamp": "^2.1.1",
+    "serverless-http": "^1.5.5",
+    "serverless-offline": "^3.20.3",
+    "serverless-plugin-typescript": "^1.1.5",
+    "stacktrace-parser": "^0.1.4"
+  },
+  "devDependencies": {
+    "@types/koa": "^2.0.45",
+    "@types/koa-router": "^7.0.27",
+    "nodemon": "^1.17.3",
+    "ts-node": "^6.0.0",
+    "typescript": "^2.8.1"
+  }
+}

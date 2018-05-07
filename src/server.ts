@@ -4,6 +4,8 @@ import * as compose from 'koa-compose'
 import { devRouter } from './controller/devRouter'
 import { serverRouter } from './controller/serverRouter';
 import { rootRouter } from './controller/rootRouter';
+const serverless = require('serverless-http');
+
 
 async function erorHandler(ctx: Koa.Context, next: () => Promise<any>) {
     try {
@@ -25,5 +27,4 @@ const all = compose([
 ])
 
 app.use(all);
-app.listen(8080);
-console.log('Server running on port 8080');
+module.exports.handler = serverless(app);

@@ -1,8 +1,9 @@
+
 {
     "compilerOptions": {
         "module": "commonjs",
         "target": "es2017",
-        "outDir": "./dist",
+        "outDir": "./.build",
         "sourceMap": true,
         "removeComments": true,
         "strict": true,
@@ -15,8 +16,5 @@
         "noUnusedParameters": true,
         "noImplicitReturns": true,
         "noFallthroughCasesInSwitch": true,
-    },
-    "include": [
-        "./src/**/*"
-    ]
+    }
 }
