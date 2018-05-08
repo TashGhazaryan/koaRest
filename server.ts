@@ -8,8 +8,6 @@ import * as serverless from 'serverless-http';
 import { Http2ServerRequest } from 'http2';
 
 
-
-
 async function errorHandler(ctx: Koa.Context, next: () => Promise<any>) {
     try {
         await next();
