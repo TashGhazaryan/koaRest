@@ -2,22 +2,29 @@ service: my-express-application
 plugins:
   - serverless-plugin-typescript
   - serverless-offline
+
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: dev
+  region: us-east-1
+  environment:
+    offline_prefix: ${self:provider.stage}
+    
+    
 custom:
   tableName: 'users-table-${self:provider.stage}'
   dynamodb:
     start:
       migrate: true
-
-provider:
-  name: aws
-  runtime: nodejs6.10
-  stage: dev
-  region: us-east-1
+  serverless-offline:
+    prefix: ${opt:stage, self:provider.stage}
 
 functions:
   app:
     handler: server.handler
     events:
       - http: ANY /
-      - http: 'ANY {proxy+}'
+      - http: 'ANY /{proxy+}'
 

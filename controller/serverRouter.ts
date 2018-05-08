@@ -4,8 +4,16 @@ const router = new Router({
 })
 
 router.get('/info', async (ctx) => {
+    console.log(ctx.request)
     const resp = {
         timestamp: Date.now()
+    }
+    ctx.body = resp;
+})
+router.get('/dev', async (ctx) => {
+    console.log(ctx.request)
+    const resp = {
+        timestamp: "tagiiil"
     }
     ctx.body = resp;
 })

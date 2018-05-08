@@ -10,7 +10,7 @@ router.get('/', async (ctx) => {
 })
 
 router.get('/test-error', async () => {
-    throw new Error('my error');
+    throw new Error('my error');   
 })
 
 export const rootRouter = router.routes();

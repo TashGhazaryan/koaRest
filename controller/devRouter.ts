@@ -5,6 +5,7 @@ const router = new Router({
 })
 
 router.get('/', async (ctx) => {
+    console.log(ctx.url);
     const resp = {
         message: 'Dev Endpoint!'
     }
