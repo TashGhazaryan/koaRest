@@ -28,8 +28,6 @@ app.use(compose([
     rootRouter
 ]));
 
-
-
 module.exports.handler =  serverless(app, {
     request: (request:Http2ServerRequest) => {
         if (process.env.IS_OFFLINE) {
