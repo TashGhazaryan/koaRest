@@ -10,12 +10,5 @@ router.get('/info', async (ctx) => {
     }
     ctx.body = resp;
 })
-router.get('/dev', async (ctx) => {
-    console.log(ctx.request)
-    const resp = {
-        timestamp: "tagiiil"
-    }
-    ctx.body = resp;
-})
 
 export const serverRouter = router.routes();
