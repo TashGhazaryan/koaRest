@@ -22,9 +22,30 @@ custom:
     prefix: ${opt:stage, self:provider.stage}
 
 functions:
-  app:
-    handler: server.handler
+#  app:
+#    handler: server.handler
+#    events:
+#      - http: ANY /
+#      - http: 'ANY /{proxy+}'
+
+  hello:
+    handler: lambda/lambda.hello
     events:
-      - http: ANY /
-      - http: 'ANY /{proxy+}'
+      - http: GET /
+  getDev:
+    handler: lambda/devHandler.getDev
+    events:
+      - http: GET /dev
+  postDev:
+    handler: lambda/devHandler.postDev
+    events:
+      - http: 'POST /dev/{id+}'
+  info:
+    handler: lambda/serverHandler.info
+    events:
+      - http: 'GET /server/info'
+  error:
+    handler: lambda/lambda.err
+    events:
+      - http: GET /test-error
 
